@@ -1,0 +1,6 @@
+{
+  "name": "NES Waveform Synthesizer",
+  "description": "Authentic 8-bit Ricoh 2A03 APU waveform synthesizer and keyboard played with a classic tactile NES gamepad controller.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

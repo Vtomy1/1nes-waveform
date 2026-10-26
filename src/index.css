@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-nes {
+    font-family: 'Press Start 2P', monospace;
+  }
+  .font-retro-mono {
+    font-family: 'Space Mono', monospace;
+  }
+  .font-body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+/* CRT Scanlines and Retro Screen Effects */
+.crt-screen {
+  position: relative;
+  overflow: hidden;
+}
+
+.crt-screen::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.35) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+  z-index: 20;
+  background-size: 100% 3px, 4px 100%;
+  pointer-events: none;
+}
+
+.crt-curvature {
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.8), inset 0 0 10px rgba(0, 0, 0, 0.9);
+}
+
+/* Tactile 3D button press utility */
+.btn-nes-3d {
+  box-shadow: 0 4px 0 #111, 0 6px 6px rgba(0, 0, 0, 0.4);
+  transition: transform 0.05s ease, box-shadow 0.05s ease;
+}
+
+.btn-nes-3d:active, .btn-nes-3d.active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #111, 0 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* Red NES Button 3D */
+.btn-nes-red {
+  background: radial-gradient(circle at 35% 35%, #f43f5e 0%, #e11d48 40%, #be123c 100%);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.4), 0 5px 0 #881337, 0 7px 8px rgba(0, 0, 0, 0.4);
+}
+
+.btn-nes-red:active, .btn-nes-red.active {
+  transform: translateY(4px);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4), 0 1px 0 #881337, 0 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* D-Pad cross styling */
+.dpad-btn {
+  background: radial-gradient(circle at 40% 40%, #374151 0%, #1f2937 60%, #111827 100%);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15), 0 3px 0 #030712;
+}
+
+.dpad-btn:active, .dpad-btn.active {
+  transform: translateY(2px);
+  box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.7), 0 1px 0 #030712;
+  background: #111827;
+}
+
+/* Custom scrollbars for retro panels */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
